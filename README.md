@@ -3,5 +3,4 @@
 ---
 hello
 world
-1
 
