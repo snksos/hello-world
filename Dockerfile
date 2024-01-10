@@ -1,3 +1,4 @@
 FROM --platform=$BUILDPLATFORM scratch
 
-RUN echo 'hello-world'
+COPY hello /
+CMD ["/hello"]
