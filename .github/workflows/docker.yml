@@ -14,19 +14,19 @@ jobs:
         name: Check out the repo
         uses: actions/checkout@v4
       -
-        name: Log in to JiHu Docker
+        name: Log in to Container Docker
         uses: docker/login-action@v3
         with:
-          registry: registry.jihulab.com
-          username: ${{ secrets.JIHU_USERNAME }}
-          password: ${{ secrets.JIHU_PASSWORD }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       -
         name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: registry.jihulab.com/waxgourd.ha/ha-wg-addons/hello-world
+          images: ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=latest
             type=ref,event=tag
