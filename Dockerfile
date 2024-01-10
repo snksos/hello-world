@@ -1,3 +1,3 @@
-FROM --platform=$BUILDPLATFORM busybox:latest
+FROM --platform=$BUILDPLATFORM scratch
 
 RUN echo 'hello-world'
